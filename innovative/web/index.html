@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+                
+    
+    </head>
+    <body>
+        <div>
+            <form action="authServlet" method="post" id="myForm">
+                <a href="" id="register" name="register" onclick="submitForm()">Register</a>
+                <a href="" id="login" name="login" onclick="submitForm()">Login</a>
+                <a href="" id="logout" name="logout" onclick="submitForm()">Logout</a>
+                <a href="" id="profile" name="profile" onclick="submitForm()">Profile</a>
+                <input type="hidden" name="btn" id="btn" value="" />
+                <hr>
+            </form>
+        </div>
+    <script>
+            var register = document.getElementById("register");
+            var login = document.getElementById("login");
+            var logout = document.getElementById("logout");
+            var profile = document.getElementById("profile");
+            var myform = document.querySelector("#myForm");
+            
+            register.addEventListener("click", function(event){
+                event.preventDefault();
+                document.querySelector("#btn").value = "register";
+                myform.submit();
+            });
+            
+            login.addEventListener("click", function(event){
+                event.preventDefault();
+                document.querySelector("#btn").value = "login";
+                myform.submit();
+            });
+            
+            logout.addEventListener("click", function(event){
+                event.preventDefault();
+                document.querySelector("#btn").value = "logout";
+                myform.submit();
+            });
+            
+            profile.addEventListener("click", function(event){
+                event.preventDefault();
+                document.querySelector("#btn").value = "profile";
+                myform.submit();
+            });
+
+        </script>
+    </body>
+</html>
