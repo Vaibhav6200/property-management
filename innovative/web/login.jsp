@@ -26,19 +26,29 @@
                         <span class="signup-image-link"><b>Create a New Account</b></span>
                         <a href="register.html" class="signup-image-link" style="color:#924747;">Register HERE !!</a>
                     </div>
-                    
                     <div class="signin-form">
                         <h2 class="form-title">LOGIN</h2>
+                        
+                        
                         <form method="post" action="loginServlet" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label> 
-                                <input type="text" name="username" id="username" placeholder="USERNAME" />
+                                <input type="text" name="username" id="username" placeholder="USERNAME" required />
                             </div>
                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label> 
-                                <input type="password" name="password" id="password" placeholder="PASSWORD" />
+                                <input type="password" name="password" id="password" placeholder="PASSWORD" required />
                             </div>
-
+                        
+                            <div style="color:red;">
+                                <% 
+                                  String error = (String) session.getAttribute("authError");
+                                  if(error != null){
+                                      out.println(error);
+                                      session.removeAttribute("authError");
+                                  }
+                                %>
+                            </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="LOGIN" />
                             </div>

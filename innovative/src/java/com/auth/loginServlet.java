@@ -20,28 +20,18 @@ public class loginServlet extends HttpServlet {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             
-            
-            // include navbar
-            request.getRequestDispatcher("index.html").include(request, response);
-            
-            // validate user input
-            if (username == null || username.isEmpty() || password == null || password.isEmpty()) {
-                request.setAttribute("error", "Please enter both username and password.");
-                request.getRequestDispatcher("loginPage.html").forward(request, response);
-                return;
-            }
-            
             // authenticate user
             boolean authenticated = authenticate(username, password);
             
+            HttpSession session = request.getSession();
+            
             if(authenticated){
                 // create session
-                HttpSession session = request.getSession();
-                session.setAttribute("user_id", username);
-                response.sendRedirect("ProfileServlet");
+                session.setAttribute("logged_in", true);
+                response.sendRedirect("index.jsp");
             } else {
-                out.println("Invalid username or password.");
-                request.getRequestDispatcher("loginPage.html").include(request, response);
+                session.setAttribute("authError", "Invalid username or password");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
             
             out.println("</body></html>");
