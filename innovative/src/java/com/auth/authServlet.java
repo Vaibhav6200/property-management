@@ -27,15 +27,13 @@ public class authServlet extends HttpServlet {
             
             
             if(btn.equals("register")){
-                if(session != null)
-                    out.println("You are Already Logged in, do you want to register another account ?<br><hr>");
-                request.getRequestDispatcher("register.html").include(request, response);
+                response.sendRedirect("login.jsp");
             }
             
             else if(btn.equals("login")){
                 // include login page (if user is not authticated)
                 if(session == null)
-                    request.getRequestDispatcher("loginPage.html").include(request, response);
+                    response.sendRedirect("login.jsp");
                 else
                     request.getRequestDispatcher("ProfileServlet").forward(request, response);
             }
