@@ -1,3 +1,10 @@
+<%-- 
+    Document   : property_grid
+    Created on : 21 Apr, 2023, 3:24:29 AM
+    Author     : Vaibhav
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,44 +35,7 @@
 
 <body>
 
-  <!-- ======= Header/Navbar ======= -->
-  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
-    <div class="container">
-      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <a class="navbar-brand text-brand" href="index.html">Housing<span class="color-b">Agency</span></a>
-
-      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
-        <ul class="navbar-nav">
-
-          <li class="nav-item">
-            <a class="nav-link " href="index.html">Home</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link " href="about.html">About</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link " href="property_grid.html">Featured Property</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link " href="register.html">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="login.html">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav><!-- End Header/Navbar -->
+  <%@include file="/includes/header.jsp" %>
 
   <main id="main">
 
@@ -501,55 +471,9 @@
       </div>
     </div>
   </section>
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <nav class="nav-footer">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="index.html">Home</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="about.html">About</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="property-grid.html">Property</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="socials-a">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-facebook" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-twitter" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-instagram" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-linkedin" aria-hidden="true"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
 
+  <%@include file="/includes/footer.jsp" %>
+  
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

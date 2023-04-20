@@ -9,8 +9,16 @@
 </head>
 <body>
 
+  <%@ include file="/includes/header.jsp" %>
+  
+  
         <p>welcome ${sessionScope.user_id} to Home Page</p>
         <p>this username we got from the session created when we registered/logged you in</p>
 
+        
+    
+  <%@include file="/includes/footer.jsp" %> %>
+  
+        
 </body>
 </html>
