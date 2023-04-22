@@ -9,6 +9,7 @@
 <%
     session.setAttribute("logged_in", false);
     response.sendRedirect("index.jsp");
+    getServletContext().setAttribute("is_admin", false);
 %>
         
 

@@ -7,23 +7,13 @@ import java.sql.*;
 
 
 public class loginServlet extends HttpServlet {
-    public void init() {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/project", "root", "");
-            getServletContext().setAttribute("DBConnection", conn);
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet loginServlet</title>");            
+            out.println("<title>loginServlet</title>");            
             out.println("</head>");
             out.println("<body>");
             
@@ -58,8 +48,16 @@ public class loginServlet extends HttpServlet {
             String query = "Select * FROM users WHERE username='" + username + "' AND password='" +password + "'";
             ResultSet r = stmt.executeQuery(query);
             
-            if(r.next())
+            boolean is_admin=false;
+            if(r.next()){
                 row = r.getString(1);
+                is_admin = r.getBoolean(6);
+            }
+            
+            if(is_admin)
+                getServletContext().setAttribute("is_admin", true);
+            else
+                getServletContext().setAttribute("is_admin", false);
         }
         catch(Exception e){
             e.printStackTrace();
@@ -68,16 +66,6 @@ public class loginServlet extends HttpServlet {
         if(row.length() > 0)
             return true;
         return false;
-    }
-
-    
-    public void destroy() {
-        Connection conn = (Connection) getServletContext().getAttribute("DBConnection");
-        try {
-            conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
     
 

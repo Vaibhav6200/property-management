@@ -1,3 +1,10 @@
+<%-- 
+    Document   : property_register
+    Created on : 22 Apr, 2023, 3:51:37 PM
+    Author     : Vaibhav
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

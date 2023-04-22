@@ -51,6 +51,17 @@
               <a class="nav-link " href="login.jsp">Login</a>
             </li>
           <% } %>
+          
+          <%
+                Boolean admin_obj = (Boolean) getServletContext().getAttribute("is_admin");
+                boolean is_admin = (admin_obj != null) ? admin_obj : false;
+                if(is_admin){
+          %>
+            <li class="nav-item">
+              <a class="nav-link " href="property_register.jsp">Add Property</a>
+            </li>
+          <% } %>
+          
         </ul>
       </div>
     </div>

@@ -147,7 +147,9 @@
           <div class="swiper-wrapper">
 
             <% 
-                Connection conn = (Connection)getServletContext().getAttribute("DBConnection");
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/project", "root", "");
+                getServletContext().setAttribute("DBConnection", conn);                
                 String query = "SELECT * FROM property";
                 Statement stmt = conn.createStatement();
                 ResultSet properties = stmt.executeQuery(query);
@@ -171,7 +173,7 @@
                       <div class="price-box d-flex">
                         <span class="price-a">rent | Rs.  12000</span>
                       </div>
-                      <a href="propertyDetails.jsp" class="link-a">Click here to view
+                        <a href="propertyDetails.jsp?id=<% out.println(properties.getString(1)); %>" class="link-a">Click here to view
                         <span class="bi bi-chevron-right"></span>
                       </a>
                     </div>
