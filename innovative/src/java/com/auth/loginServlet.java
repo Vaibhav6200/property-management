@@ -7,6 +7,16 @@ import java.sql.*;
 
 
 public class loginServlet extends HttpServlet {
+    public void init() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/project", "root", "");
+            getServletContext().setAttribute("DBConnection", conn);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -60,6 +70,16 @@ public class loginServlet extends HttpServlet {
         return false;
     }
 
+    
+    public void destroy() {
+        Connection conn = (Connection) getServletContext().getAttribute("DBConnection");
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

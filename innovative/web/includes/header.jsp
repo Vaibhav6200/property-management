@@ -36,15 +36,16 @@
           </li>
 
           <%
-               boolean logged_in = (boolean)session.getAttribute("logged_in");
-               if(logged_in == true){
+                Boolean logged_in_obj = (Boolean) session.getAttribute("logged_in");
+                boolean logged_in = (logged_in_obj != null) ? logged_in_obj : false;
+                if(logged_in == true){
           %>
             <li class="nav-item">
-              <a class="nav-link " href="logout.jsp" style="margin-left:100px">Logout</a>
+              <a class="nav-link " href="logout.jsp" style="margin-left:70px">Logout</a>
             </li>
           <% } else { %>
             <li class="nav-item">
-              <a class="nav-link " href="register.html" style="margin-left:100px">Register</a>
+              <a class="nav-link " href="register.html" style="margin-left:70px">Register</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="login.jsp">Login</a>
