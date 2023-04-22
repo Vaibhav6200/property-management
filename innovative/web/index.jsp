@@ -164,9 +164,7 @@
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="propertyDetails.jsp">
-                            <% properties.getString(2); %> 
-                        </a>
+                        <a href="propertyDetails.jsp"><% out.println(properties.getString(2)); %> </a>
                       </h2>
                     </div>
                     <div class="card-body-a">
