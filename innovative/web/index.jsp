@@ -148,8 +148,7 @@
 
             <% 
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/project", "root", "");
-                getServletContext().setAttribute("DBConnection", conn);                
+                Connection conn = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3307/project", "root", "");
                 String query = "SELECT * FROM property";
                 Statement stmt = conn.createStatement();
                 ResultSet properties = stmt.executeQuery(query);
@@ -474,35 +473,7 @@
                     </div>
                     <div class="testimonial-author-box">
                       <img src="assets/img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
-                      <h5 class="testimonial-author">James Bond</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End carousel item -->
-
-            <div class="carousel-item-a swiper-slide">
-              <div class="testimonials-box">
-                <div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="testimonial-img">
-                      <img src="assets/img/testimonial-2.jpg" alt="" class="img-fluid">
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-md-6">
-                    <div class="testimonial-ico">
-                      <i class="bi bi-chat-quote-fill"></i>
-                    </div>
-                    <div class="testimonials-content">
-                      <p class="testimonial-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
-                        debitis hic ber quibusdam
-                        voluptatibus officia expedita corpori.
-                      </p>
-                    </div>
-                    <div class="testimonial-author-box">
-                      <img src="assets/img/mini-testimonial-2.jpg" alt="" class="testimonial-avatar">
-                      <h5 class="testimonial-author">Ayesha shah</h5>
+                      <h5 class="testimonial-author">Vaibhav Paliwal</h5>
                     </div>
                   </div>
                 </div>
@@ -537,6 +508,34 @@
               </div>
             </div><!-- End carousel item -->
 
+            <div class="carousel-item-a swiper-slide">
+              <div class="testimonials-box">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="testimonial-img">
+                      <img src="assets/img/testimonial-2.jpg" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="testimonial-ico">
+                      <i class="bi bi-chat-quote-fill"></i>
+                    </div>
+                    <div class="testimonials-content">
+                      <p class="testimonial-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
+                        debitis hic ber quibusdam
+                        voluptatibus officia expedita corpori.
+                      </p>
+                    </div>
+                    <div class="testimonial-author-box">
+                      <img src="assets/img/mini-testimonial-2.jpg" alt="" class="testimonial-avatar">
+                      <h5 class="testimonial-author">Riddhi Jain</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+
           </div>
         </div>
         <div class="testimonial-carousel-pagination carousel-pagination"></div>
@@ -545,92 +544,9 @@
     </section><!-- End Testimonials Section -->
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <section class="section-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-4">
-          <div class="widget-a">
-            <div class="w-header-a">
-              <h3 class="w-title-a text-brand">EstateAgency</h3>
-            </div>
-            <div class="w-body-a">
-              <p class="w-text-a color-text-a">
-                Selling and buying real estate can be daunting and choosing the right agent can be hard. Contact us for a chat and some helpful advice regarding your property.
-              </p>
-            </div>
-            <div class="w-footer-a">
-              <ul class="list-unstyled">
-                <li class="color-a">
-                  <span class="color-text-a">Phone .</span> +91 9015454589
-                </li>
-                <li class="color-a">
-                  <span class="color-text-a">Email .</span> advance_java@project.com
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-4 section-md-t3">
-          <div class="widget-a">
-            <div class="w-header-a">
-              <h3 class="w-title-a text-brand">Services We Provide</h3>
-            </div>
-            <div class="w-body-a">
-              <div class="w-body-a">
-                <ul class="list-unstyled">
-                  <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i>Property Listing/Advertising
-                  </li>
-                  <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i>Property Inspection
-                  </li>
-                  <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i>Documentation
-                  </li>
-                  <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i>Negogiation Services
-                  </li>
-                  <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i>Rental and Investment Properties
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-4 section-md-t3">
-          <div class="widget-a">
-            <div class="w-header-a">
-              <h3 class="w-title-a text-brand">Why Choose Us?</h3>
-            </div>
-            <div class="w-body-a">
-              <ul class="list-unstyled">
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i>Great Returns
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i>Competitive Price
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i>Personalised Service
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i>On-time Payments
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i>Property Inspections
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   
-  <%@include file="/includes/footer.jsp" %> %>
+  
+  <%@include file="/includes/footer.jsp" %>
   
   
 

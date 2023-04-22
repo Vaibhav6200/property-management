@@ -17,16 +17,15 @@
     <style>
        
         @media (min-width: 1025px) {
-.h-custom {
-height: 100vh !important;
-}
-}
-select{
-    display:block;
-    height:30px;
-    
-    border-radius: 5px;
-}
+            .h-custom {
+                height: 100vh !important;
+            }
+        }
+        select{
+            display:block;
+            height:30px;
+            border-radius: 5px;
+        }
 
     </style>
 </head>
