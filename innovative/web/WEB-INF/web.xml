@@ -20,6 +20,10 @@
         <servlet-name>testServlet</servlet-name>
         <servlet-class>com.auth.testServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>propertyServlet</servlet-name>
+        <servlet-class>com.auth.propertyServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProfileServlet</servlet-name>
         <url-pattern>/ProfileServlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>testServlet</servlet-name>
         <url-pattern>/testServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>propertyServlet</servlet-name>
+        <url-pattern>/propertyServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

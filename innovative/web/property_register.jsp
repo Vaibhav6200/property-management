@@ -42,62 +42,38 @@ select{
                 <div class="card-body p-4 p-md-5">
                   <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Property Registration Form</h3>
       
-                  <form class="px-md-2">
-      
-                    <div class="form-outline mb-4">
-                      
-                      <label class="form-label" for="form3Example1q">Property ID</label>
-                      <input type="text" id="form3Example1q" class="form-control" />
-                    </div>
-      
+                  
+                  <form action="propertyServlet" method="post" class="px-md-2" enctype="multipart/form-data">
                     <div class="row">
                       <div class="col-md-6 mb-4">
-      
                         <div class="form-outline">
-                         
                           <label for="location" class="form-label">Location</label>
-                          <input type="text" class="form-control" id="location" />
+                          <input type="text" class="form-control" name="location" id="location" />
                         </div>
-      
                       </div>
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                         
                             <label for="location" class="form-label">Property-Type</label>
-                            <input type="text" class="form-control" id="property-type" />
-                            
-                           
+                            <input type="text" class="form-control" name="property_type" id="property-type" />                           
                           </div>
-                       
-                       
-      
                       </div>
                     </div>
-
                     <div class="row">
-                        <div class="col-md-6 mb-4">
-        
-                          <div class="form-outline">
-                           
+                        <div class="col-md-6">
                             <label for="status" class="form-label">Status</label>
-                            <select class="select">
-                              <option value="1" style="height:45px;">Select Status</option>
+                            <select class="form-control" name="status">
+                              <option disabled selected>--------------------</option>
                               <option value="2">For Rent</option>
                               <option value="3">For Sale</option>
-                              
                             </select>
-                          </div>
-        
                         </div>
-
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
                               <label for="area" class="form-label">Area(sq. meter)</label>
-                              <input type="text" class="form-control" id="area" />
+                              <input type="text" class="form-control" id="area" name="area" />
                             </div>
                         </div>
                       </div>
-      
                       <div class="row">
                         <div class="col-md-4 mb-4">
                           <div class="form-outline">
@@ -113,22 +89,19 @@ select{
                           </div>
                         <div class="col-md-4 mb-4">
                             <div class="form-outline">
-
                                 <label for="baths" class="form-label">Bath</label>
-                                <input type="number" class="form-control" id="baths" min=0 />
+                                <input type="number" class="form-control" id="baths" name="baths" min=0 />
                             </div>
                         </div>
                       </div>
-
                       <div class="row">
                         <div class="form-outline">
                             <div class="col-md-6">
                                 <label for="description" class="form-label">Description(50-70 words)</label>
                             </div>
-                                <textarea id="description" name="description" rows="10" cols="60">Type your text</textarea>
+                            <textarea class="form-control mb-3" id="description" name="description" rows="5" cols="60" placeholder="Type your text"></textarea>
                         </div>
                       </div>
-                   
                     <div class="row">
                         <div class="form-outline">
                             <div class="col-md-6">
@@ -143,38 +116,54 @@ select{
                     <br>
                     <div class="row">
                         <div class="col-md-4 col-lg-3">
-                            <input type="checkbox" id="Swimming-Pool" name="Swimming-Pool" value="1">
-                            <label for="Swimming-Pool">Pool:</label>
+                            <input type="checkbox" id="swimming_pool-Pool" name="swimming_pool">
+                            <label for="Swimming-Pool">Pool</label>
                         </div>
                         <div class="col-md-4 col-lg-3">
-                            <input type="checkbox" id="Gym" name="Gym" value="2">
+                            <input type="checkbox" id="gym" name="gym">
                             <label for="Gym">Gym</label>
 
                         </div>
                         <div class="col-md-4 col-lg-3">
-                            <input type="checkbox" id="Garden" name="Garden" value="3">
-                            <label for="Garden">Garden:</label>
+                            <input type="checkbox" id="garden" name="garden">
+                            <label for="Garden">Garden</label>
                         </div>
                         <div class="col-md-4 col-lg-3">
-                            <input type="checkbox" id="checkbox" name="Club-House" value="4">
-                            <label for="Club-House">Club-House:</label>
+                            <input type="checkbox" id="club_house" name="club_house">
+                            <label for="Club-House">Club-House</label>
                         </div>
                         <div class="col-md-4 col-lg-3">
-                            <input type="checkbox" id="Internet" name="Internet" value="5">
-                            <label for="Internet">Internet:</label>
+                            <input type="checkbox" id="internet" name="internet">
+                            <label for="Internet">Internet</label>
                         </div>
                         <div class="col-md-4 col-lg-3">
-                            <input type="checkbox" id="badminton" name="badminton" value="6">
+                            <input type="checkbox" id="badminton" name="badminton">
                             <label for="badminton">Badminton</label>
                         </div>
                     </div>
                     <br>
-                    <div class="row">
+                    <div class="row mb-2">
                         <div class="col-lg-6">
-                            <label for="file">Select a file:</label>
+                            <label for="file">Property Image 1:</label>
                         </div>
                         <div class="col-lg-6">
-                            <input type="file" id="file" name="file" class="form-control">
+                            <input type="file" id="image1" name="image1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-lg-6">
+                            <label for="file">Property Image 2:</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="file" id="image2" name="image2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-lg-6">
+                            <label for="file">Property Image 3:</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="file" id="image3" name="image3" class="form-control">
                         </div>
                     </div>
                   <br>
@@ -186,5 +175,6 @@ select{
           </div>
         </div>
       </section>
+        
 </body>
 </html>
