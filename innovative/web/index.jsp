@@ -164,7 +164,7 @@
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="property-single.html">
+                        <a href="propertyDetails.jsp">
                             <% properties.getString(2); %> 
                         </a>
                       </h2>
@@ -173,7 +173,7 @@
                       <div class="price-box d-flex">
                         <span class="price-a">rent | Rs.  12000</span>
                       </div>
-                      <a href="property-single.html" class="link-a">Click here to view
+                      <a href="propertyDetails.jsp" class="link-a">Click here to view
                         <span class="bi bi-chevron-right"></span>
                       </a>
                     </div>
